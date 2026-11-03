@@ -35,11 +35,8 @@ export function Layout() {
     <div className="shell">
       <aside className="sidebar">
         <div className="brand">
-          <span className="brand-mark" aria-hidden="true">SD</span>
-          <div>
-            <div className="brand-name">SpeedDex</div>
-            <div className="brand-sub">Admin console</div>
-          </div>
+          <img className="brand-logo" src={`${import.meta.env.BASE_URL}logo.png`} alt="SpeedDex" width={400} height={162} />
+          <div className="brand-sub">Admin console</div>
         </div>
         <nav aria-label="Main">
           {NAV.map((g) => {
