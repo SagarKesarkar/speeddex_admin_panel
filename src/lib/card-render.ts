@@ -59,9 +59,10 @@ export type Photo = { image: CanvasImageSource & { width: number; height: number
 // ------------------------------------------------------------------ colour
 const hex = (h: string) => [1, 3, 5].map((i) => parseInt(h.slice(i, i + 2), 16)) as [number, number, number];
 const rgba = (h: string, a: number) => `rgba(${hex(h).join(',')},${a})`;
+/** Mixes two #rrggbb colours; returns #rrggbb, so results can be mixed again. */
 const lerp = (a: string, b: string, t: number) => {
   const [x, y] = [hex(a), hex(b)];
-  return `rgb(${x.map((v, i) => Math.round(v + (y[i]! - v) * t)).join(',')})`;
+  return `#${x.map((v, i) => Math.round(v + (y[i]! - v) * t).toString(16).padStart(2, '0')).join('')}`;
 };
 const tierOf = (id: Rarity) => TIERS.find((t) => t.id === id) ?? TIERS[0]!;
 
