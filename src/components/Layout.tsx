@@ -22,6 +22,7 @@ const NAV: { section: string; items: Item[] }[] = [
     section: 'Configuration',
     items: [
       { to: '/catalog', label: 'Catalogue', icon: '▤' },
+      { to: '/card-maker', label: 'Card maker', icon: '▭' },
       { to: '/store', label: 'Store', icon: '◈', adminOnly: true },
       { to: '/audit', label: 'Audit log', icon: '☰', adminOnly: true },
     ],

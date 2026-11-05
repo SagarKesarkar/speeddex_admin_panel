@@ -4,6 +4,7 @@ import { useAuth } from './auth';
 import { Layout } from './components/Layout';
 import { Empty, Spinner } from './components/ui';
 import { AuditLog } from './pages/AuditLog';
+import { CardMaker } from './pages/CardMaker';
 import { CaptureView, Captures } from './pages/Captures';
 import { AiProposals, ProposalReview } from './pages/AiProposals';
 import { Catalog, ModelView } from './pages/Catalog';
@@ -35,6 +36,7 @@ const router = createBrowserRouter(
         { path: 'catalog/models/:id', element: <ModelView /> },
         { path: 'catalog/ai', element: <AdminOnly><AiProposals /></AdminOnly> },
         { path: 'catalog/ai/:id', element: <AdminOnly><ProposalReview /></AdminOnly> },
+        { path: 'card-maker', element: <CardMaker /> },
         { path: 'store', element: <AdminOnly><Store /></AdminOnly> },
         { path: 'audit', element: <AdminOnly><AuditLog /></AdminOnly> },
         { path: '*', element: <Navigate to="/" replace /> },
